@@ -11,9 +11,8 @@
 </head>
 
 <body>
-
-
-<section class="container">
+    
+    <section class="container">
 
         <h1>To do input</h1>
         <div class="inputContainer">   
@@ -53,6 +52,31 @@
         </div>
     </section>
 
+    <div class="alert" id="confirmOpreation">
+        <div class="alertContent">
+            <h1>Are you sure you want to do the opreation?<Br><Br>(Cant undo changes)</h1>
+            <div>
+                <button id="confirmOpreationButton">Confirm</button>
+                <button id="cancelOpreationButton" >Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="alertEdit" id="confirmEdit">
+        <div class="alertEditContent">
+            <h1>Rename Task</h1>
+                <input id="alertEditContentInput" type="text" placeholder="New content">
+                <p id="inputEditNote">Input must be longer than 5 characters and doesnt start with a number</p>
+            <div>
+                <button class="alertEditConfirmButton" id="confirmOpreationButtonEdit">Confirm</button>
+                <button id="cancelOpreationButtonEdit" >Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
