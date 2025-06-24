@@ -1,416 +1,334 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/*
+
+    <div class="task" id="9999">
+                    
+        <p>Original NOT SHOWN</p>
+
+        <div class="icons">
+            <input type="checkbox">
+            <img src="./sourceImages/icons/pencil-solid.svg" alt="pencilIcon">
+            <img src="./sourceImages/icons/trash-solid.svg" alt="deleteIcon">
+        </div>
+    </div>
 
 
-*
-{
-    padding: 0px;
-    margin: 0px;
-    
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
 }
 
-body
-{
+body {
+  height: auto;
+  width: auto;
 
-   
-    height: auto;
-    width: auto;
-
-
-    font-family: "Montserrat", serif;
-    
-}   
-
-
-::-webkit-scrollbar
-{
-    width: 10px;
+  font-family: "Montserrat", serif;
 }
 
-::-webkit-scrollbar-track
-{
-    box-shadow: inset 0px 0px 15px gray;
-    
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0px 0px 15px gray;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #0a96ba;
-    
-  }
-
-
-
-.container
-{
-    display: 80%;
-    height: 100vh; /*  To enable the scroll effect in the task scroll      */
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    margin: 0em 0px;
-    gap: 3em;
+  background: #0a96ba;
 }
 
-.container h1
-{
-    text-align: center;
+.container {
+  display: 80%;
+  height: 100vh; /*  To enable the scroll effect in the task scroll      */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0em 0px;
+  gap: 3em;
 }
 
-
-
-.inputContainer
-{
-    
-    width: 80%;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    padding: 1em 2em;
-
-
-    border: 2px solid lightgray;
-    border-radius: 0.2em;
-
+.container h1 {
+  text-align: center;
 }
 
-.inputContainerContent
-{
-    width: 100%;
+.inputContainer {
+  width: 80%;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 
- 
-    
+  padding: 1em 2em;
+
+  border: 2px solid lightgray;
+  border-radius: 0.2em;
 }
 
-.inputContainerContent div
-{
-    width: 100%;
+.inputContainerContent {
+  width: 100%;
 
-    display: flex;
-   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.inputIcon
-{
-    display: inline;
-    width: 1em;
+.inputContainerContent div {
+  width: 100%;
 
-    padding: 0.5em;
-    background-color: #0a96ba;
+  display: flex;
 }
 
-.inputContainerContent input
-{
-    width: 100%;
-    
-    font-size: 1em;
+.inputIcon {
+  display: inline;
+  width: 1em;
 
-
-
-    border: 1px solid #0a96ba;
-    outline: none;
-
-    padding: 0.5em 0 0.5em 1em;
-
-    background-color: white;
+  padding: 0.5em;
+  background-color: #0a96ba;
 }
 
-#inputNote
-{
-    display: none;
-    color: red;
+.inputContainerContent input {
+  width: 100%;
+
+  font-size: 1em;
+
+  border: 1px solid #0a96ba;
+  outline: none;
+
+  padding: 0.5em 0 0.5em 1em;
+
+  background-color: white;
 }
 
-.inputContainerContent button
-{
-    width: 100%;
-    padding: 0.5em 0px 0.5em 0px;
-
-    color: white;
-
-    background-color: #0a96ba;
-    border: none;
-    border-radius: 2px;
+#inputNote {
+  display: none;
+  color: red;
 }
 
+.inputContainerContent button {
+  width: 100%;
+  padding: 0.5em 0px 0.5em 0px;
 
+  color: white;
 
-
-
-.listContainer
-{
-
-    width: 83.5%;
-    
-
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-
-    margin-left: auto;
-    margin-right: auto;
-
-   
-    
-    border-radius: 0.2em;
-    
-    
+  background-color: #0a96ba;
+  border: none;
+  border-radius: 2px;
 }
 
-#noTasksHeader
-{
-    text-align: center;
-    display: none;
+.listContainer {
+  width: 83.5%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 0.2em;
 }
 
-.tabsContainer
-{
-    width: 100%;
-    display: flex;
-    
-    gap: 1em;
+#noTasksHeader {
+  text-align: center;
+  display: none;
 }
 
-.tabButton
-{
+.tabsContainer {
+  width: 100%;
+  display: flex;
 
-    width: 100%;
-    padding: 0.5em 0px 0.5em 0px;
-
-    color: white;
-
-    background-color: #0a96ba;
-    border: none;
-    border-radius: 2px;
+  gap: 1em;
 }
 
+.tabButton {
+  width: 100%;
+  padding: 0.5em 0px 0.5em 0px;
 
-.scrollContainer
-{
-    width: 100%;
-    max-height: 50%;
+  color: white;
 
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-
-
-    overflow-y: auto;
-
-    
-
+  background-color: #0a96ba;
+  border: none;
+  border-radius: 2px;
 }
 
-.task
-{
+.scrollContainer {
+  width: 100%;
+  max-height: 50%;
 
-   
-    display: flex;
-    justify-content: space-between;
-   
-    padding: 0.5em;
-    border: 2px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+
+  overflow-y: auto;
 }
 
-.taskParagraphCrossed
-{
-    color: red;
-    text-decoration: line-through  black;
+.task {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0.5em;
+  border: 2px solid lightgray;
 }
 
-.icons
-{
-    display: flex;
-    gap: 0.5em;
-   
-}
-.icons img
-{
-    width: 1em;
-    gap: 0.5em;
-
-    cursor: pointer;
+.taskParagraphCrossed {
+  color: red;
+  text-decoration: line-through black;
 }
 
+.icons {
+  display: flex;
+  gap: 0.5em;
+}
+.icons img {
+  width: 1em;
+  gap: 0.5em;
 
-
-.deleteContainer
-{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 1em;
+  cursor: pointer;
 }
 
-.deleteButton
-{
-    width: 100%;
-    padding: 0.5em 0px 0.5em 0px;
-    background-color: #e94242;
-    color: white;
-    
-    
-    
-    border: none;
-    border-radius: 2px;
+.deleteContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
 }
 
-.hoverEffect
-{
-    box-shadow: 0 0 20px rgba(10, 150, 186, 0.5);
-   
-}
-.alert
-{
-    height: 100%;
-    width: 100%;
+.deleteButton {
+  width: 100%;
+  padding: 0.5em 0px 0.5em 0px;
+  background-color: #e94242;
+  color: white;
 
-    display: none;
-    justify-content: center;
-    align-items: center;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 6969;
+  border: none;
+  border-radius: 2px;
 }
 
-.alertContent
-{
-
-    width: 25em;
-    height: 15em;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-
-
-
-    border-radius: 1em;
-    background-color: white;
+.hoverEffect {
+  box-shadow: 0 0 20px rgba(10, 150, 186, 0.5);
 }
 
-.alertContent h1
-{
-    font-size: 1.5em;
-    text-align: center;
+.alert {
+  height: 100%;
+  width: 100%;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 6969;
 }
 
-.alertContent div
-{
-    display: flex;
-    gap: 2em;
+.alertContent {
+  width: 25em;
+  height: 15em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+
+  border-radius: 1em;
+  background-color: white;
 }
 
-.alertContent div button
-{   
-    padding: 0.5em 2em;
-    border: none;
-    color: white;
+.alertContent h1 {
+  font-size: 1.5em;
+  text-align: center;
 }
 
-#confirmOpreationButton
-{
-    background-color: #0a96ba;
+.alertContent div {
+  display: flex;
+  gap: 2em;
 }
 
-#cancelOpreationButton
-{
-    background-color: #e94242;
+.alertContent div button {
+  padding: 0.5em 2em;
+  border: none;
+  color: white;
 }
 
-
-.alertEdit
-{
-    height: 100%;
-    width: 100%;
-
-    display: none;
-    justify-content: center;
-    align-items: center;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 8000;
+#confirmOpreationButton {
+  background-color: #0a96ba;
 }
 
-.alertEditContent
-{
-
-    width: 25em;
-    height: 15em;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.2em;
-
-
-
-    border-radius: 1em;
-    background-color: white;
+#cancelOpreationButton {
+  background-color: #e94242;
 }
 
-.alertEditContent input
-{
-    padding: 0.5em 6em 0.5em 1em; 
+.alertEdit {
+  height: 100%;
+  width: 100%;
 
+  display: none;
+  justify-content: center;
+  align-items: center;
 
-    border: 1px solid black;
-    outline: none;
-    
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 8000;
 }
 
-.alertEditContent div
-{
-    display: flex;
-    gap: 1em;
-    
+.alertEditContent {
+  width: 25em;
+  height: 15em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2em;
+
+  border-radius: 1em;
+  background-color: white;
 }
 
+.alertEditContent input {
+  padding: 0.5em 6em 0.5em 1em;
 
-.alertEditContent div button
-{  
-    
-    padding: 0.5em 2em;
-    border: none;
-    color: white;
-
+  border: 1px solid black;
+  outline: none;
 }
 
-.alertEditConfirmButton
-{
-    background-color: #0a96ba;
-    color: white;
+.alertEditContent div {
+  display: flex;
+  gap: 1em;
 }
 
-#cancelOpreationButtonEdit
-{
-    background-color: #e94242;
+.alertEditContent div button {
+  padding: 0.5em 2em;
+  border: none;
+  color: white;
 }
 
-#inputEditNote
-{
-    display: none;
-    color: red;
+.alertEditConfirmButton {
+  background-color: #0a96ba;
+  color: white;
+}
 
-    font-size: 1em;
-    text-align: center;
+#cancelOpreationButtonEdit {
+  background-color: #e94242;
+}
+
+#inputEditNote {
+  display: none;
+  color: red;
+
+  font-size: 1em;
+  text-align: center;
 }
