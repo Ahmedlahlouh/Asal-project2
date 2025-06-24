@@ -21,6 +21,13 @@ let inputNote = document.getElementById("inputNote");
 
 
 
+//Blue button Click 
+let allButton = document.getElementById("all");
+let doneButton = document.getElementById("done");
+let todoButton = document.getElementById("todo");
+
+
+
 
    
 
