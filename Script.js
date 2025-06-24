@@ -293,6 +293,18 @@ const displayTaskOnAddNew = (task)=>{
     tempImg2.src = "./sourceImages/icons/trash-solid.svg";
     tempImg2.alt = "deleteIcon";
 
+    //Appending content to the icondiv
+    iconDiv.append(tempCheckbox);
+    iconDiv.append(tempImg1)
+    iconDiv.append(tempImg2)
+
+    //Appending content to the task div
+    newTask.append(tempParagraph);
+    newTask.append(iconDiv);
+    
+
+    //Appending task to task scroll container
+    scrollContainerDiv.append(newTask);
 }
 
 
