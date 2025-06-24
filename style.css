@@ -320,7 +320,10 @@ body
     color: white;
 }
 
-
+#confirmOpreationButton
+{
+    background-color: #0a96ba;
+}
 
 
 
