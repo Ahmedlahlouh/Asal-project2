@@ -377,6 +377,12 @@ body
     
 }
 
+.alertEditContent div
+{
+    display: flex;
+    gap: 1em;
+    
+}
 
 
 
