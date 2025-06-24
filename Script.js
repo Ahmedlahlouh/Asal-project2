@@ -332,6 +332,15 @@ const displayTasks = ()=>{
             let iconDiv = document.createElement("div");
             iconDiv.classList = "icons";
 
+            let tempCheckbox = document.createElement("input");
+            tempCheckbox.type = "checkbox";
+            if(task.taskId[1] === 't')
+                tempCheckbox.checked = true;
+
+            let tempImg1 = document.createElement("img");
+            tempImg1.src = "./sourceImages/icons/pencil-solid.svg"
+            tempImg1.alt = "pencilIcon";
+
 
 
         })
