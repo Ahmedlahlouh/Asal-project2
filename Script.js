@@ -350,6 +350,13 @@ const displayTasks = ()=>{
             iconDiv.append(tempImg1)
             iconDiv.append(tempImg2)
 
+            //Appending content to the task div
+            newTask.append(tempParagraph);
+            newTask.append(iconDiv);
+            
+
+            //Appending task to task scroll container
+            scrollContainerDiv.append(newTask);
 
         })
     }
