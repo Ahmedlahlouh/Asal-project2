@@ -87,6 +87,23 @@ const storeTaskChange = (task, index, flag)=>{
      * 
      * 
      */
+    
+    if(temp.length > 0 && task != null ){
+        switch(flag){
+            case 0:
+                temp[index].taskId = task.taskId;
+                temp[index].paragraphContent = task.paragraphContent;
+            break;
+
+            case 1:
+                temp.splice(index, 1);
+            break;
+
+            
+        }
+        localStorage.setItem('tasks', JSON.stringify(temp));
+    }
+
 
 }
 
