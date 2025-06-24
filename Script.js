@@ -169,6 +169,24 @@ const checkInpt = (textTT)=>{
 
 
 
+const confirmOpreationEdit = ()=>{
+    let flag = [];
+    flag[0] = "0";
+    inputEdit.value= "";
+    alertEdit.style.display = "flex";
+
+    return new Promise((resolve, reject) =>{
+
+        
+    })
+
+
+
+};
+
+
+
+
 
 
 
