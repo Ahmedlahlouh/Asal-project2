@@ -136,6 +136,9 @@ const saveTask = (text)=>{
     };
 
 
+    displayTaskOnAddNew(task);
+    noTasksChecker();
+    storeLocal(task);
    
 };
 
