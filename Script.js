@@ -256,6 +256,15 @@ const confirmOpreation = ()=>{
 
 };
 
+const addNewTask = (text)=>
+{
+
+    
+    saveTask(text);
+    
+}
+
+
 
 
 
