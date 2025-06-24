@@ -386,14 +386,298 @@ addNewTaskButton.onclick = ()=>
 
 
 
-
-
-
-
+allButton.onclick = ()=>
+{
+    /* Style*/
+    allButton.classList.add("hoverEffect");
+    doneButton.classList.remove("hoverEffect")
+    todoButton.classList.remove("hoverEffect")
    
-
-
-
-   
-
+    if(taskArr.length >=1)
+    {
+        for(let task of taskArr)
+        {
+            task.style.display = "";
+        }
+    }
     
+    
+
+};
+
+doneButton.onclick = ()=>
+{
+    /* Style*/
+    doneButton.classList.add("hoverEffect")
+    allButton.classList.remove("hoverEffect")
+    todoButton.classList.remove("hoverEffect")
+
+
+    if(taskArr.length >=1)
+    {
+        for(let task of taskArr)
+        {
+            if(task.id[1] === 't')
+                task.style.display = "";
+            else
+                task.style.display = "none";
+        }
+    }
+
+
+};
+
+todoButton.onclick = ()=>
+{
+    /* Style*/
+    todoButton.classList.add("hoverEffect")
+    allButton.classList.remove("hoverEffect")
+    doneButton.classList.remove("hoverEffect")
+
+    if(taskArr.length >= 1)
+    {
+        for(let task of taskArr)
+        {
+            if(task.id[1] === 'f')
+                task.style.display = "";
+            else
+                task.style.display = "none";
+        }
+    }
+        
+        
+
+};
+
+
+/*
+    I used here Async to wait for the user to input from the buttons
+    as the compiler wont wait for input, either you use timeout callback (Which is hell)
+    or you use promise which is the sane easier choice 😎
+
+    NOTE:
+    You should declare the function that will deal with promises as ASYNC function
+*/ 
+deleteDoneButton.onclick = async ()=>
+{
+    
+    const unloadedTasks = unloadTask();
+
+    if(unloadedTasks.length >= 1)
+    {
+        let flag =  await confirmOpreation();     
+
+        if(flag)
+        {
+              
+            unloadedTasks.forEach((task, index)=>{
+                if(task.taskId[1] === 't' )
+                {
+                    storeTaskChange(task, index, 1);
+                   
+                }
+
+                removeTasksDoneHTML();
+                noTasksChecker();
+            })
+                
+            
+        }
+    }
+     
+    
+};
+
+
+deleteAllButton.onclick = async ()=>
+{
+    const unloadedTasks = unloadTask();
+    
+    if(unloadedTasks.length >= 1)
+    {
+        let flag =await confirmOpreation();
+
+        if(flag){
+            localStorage.removeItem("tasks");
+            displayTasks();
+            removeTasksHTML();
+            noTasksChecker();
+        }
+           
+        
+    }
+    
+        
+    
+};
+
+
+
+
+
+
+
+///////                Tasks functions 
+
+scrollContainerDiv.addEventListener("click", async (event)=>{
+
+   
+
+
+    // Event for deleting task
+    if(event.target.alt === "deleteIcon"){
+       
+        const taskToDelete = event.target.closest(".task");
+        if(taskToDelete){
+            unloadedTasks = unloadTask();
+          
+
+            if(unloadedTasks.length > 0){
+                let foundTask = unloadedTasks.find(task => taskToDelete.id === task.taskId);
+               
+                if(foundTask){
+                    let foundTaskIndex = unloadedTasks.indexOf(foundTask);
+                 
+                    storeTaskChange(unloadedTasks[foundTaskIndex], foundTaskIndex, 1);
+                    taskToDelete.remove();
+                    noTasksChecker();
+                }
+                    
+            }
+                
+        }
+
+        
+
+    }
+
+    // Event for editing task
+    if(event.target.alt === "pencilIcon" ){
+        
+
+        let flag = await confirmOpreationEdit();
+        if(flag[0] === "1"){
+
+           
+            const taskToEdit = event.target.closest(".task");
+            const paragraphToEdit  = taskToEdit.querySelector("p");
+            paragraphToEdit.textContent = flag[1];
+
+            if(taskToEdit){
+                unloadedTasks = unloadTask();
+                
+                
+    
+                if(unloadedTasks.length > 0){
+                    let foundTask = unloadedTasks.find(task => taskToEdit.id === task.taskId);
+                    
+                    if(foundTask){
+                        let foundTaskIndex = unloadedTasks.indexOf(foundTask);
+                        
+
+                        unloadedTasks[foundTaskIndex].paragraphContent = flag[1];
+                        storeTaskChange(unloadedTasks[foundTaskIndex], foundTaskIndex, 0);
+                        
+                    }
+                        
+                }
+                    
+            }
+            
+
+           
+
+        }
+       
+    }
+
+
+    // Event for marking task done
+    if(event.target.type ==="checkbox" && (event.target.checked || !event.target.checked) ){
+       
+
+        const taskToDone = event.target.closest(".task");
+        const paragraphToEdit  = taskToDone.querySelector("p");
+
+        
+
+
+        if(taskToDone){
+            unloadedTasks = unloadTask();
+         
+
+            if(unloadedTasks.length > 0){
+                let foundTask = unloadedTasks.find(task => taskToDone.id === task.taskId);
+           
+                if(foundTask){
+   
+                    if(taskToDone.id[1] === 'f'){
+            
+                        taskToDone.id = taskToDone.id[0] + 't' + taskToDone.id[1].slice(2);
+                       
+                    }
+                    else if (taskToDone.id[1] === 't') {
+                        taskToDone.id = taskToDone.id[0] + 'f' + taskToDone.id[1].slice(2);
+                   
+                    }
+
+
+                    let foundTaskIndex = unloadedTasks.indexOf(foundTask);
+                  
+                    unloadedTasks[foundTaskIndex].taskId = taskToDone.id;
+
+                    storeTaskChange(unloadedTasks[foundTaskIndex], foundTaskIndex, 0);
+                    paragraphToEdit.classList.toggle("taskParagraphCrossed");
+                }
+                    
+            }
+                
+        }
+         
+    }
+
+   
+
+
+});
+
+
+window.onload = ()=>{
+    
+    allButton.classList.add("hoverEffect");
+    displayTasks();
+    noTasksChecker();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * 
+ *   <div class="task" id="3t">
+                    
+        <p class="taskParagraphCrossed"  >Task 3</p>
+
+        <div class="icons">
+            <input type="checkbox">
+            <img src="./sourceImages/icons/pencil-solid.svg" alt="pencilIcon">
+            <img src="./sourceImages/icons/trash-solid.svg" alt="deleteIcon">
+        </div>
+    </div>
+ * 
+ * 
+ * 
+ * 
+ */
