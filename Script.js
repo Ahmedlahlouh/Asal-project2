@@ -55,6 +55,15 @@ const noTasksChecker = ()=>{
 }
 
 
+const removeTasksHTML = ()=>{
+    let tasks = document.getElementsByClassName("task");
+    Array.from(tasks).forEach(task =>{
+        task.remove();
+    })
+
+   
+}
+
 
 
 
