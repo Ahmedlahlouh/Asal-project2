@@ -177,6 +177,29 @@ const confirmOpreationEdit = ()=>{
 
     return new Promise((resolve, reject) =>{
 
+        confirmOpreationButtonEdit.addEventListener("click", ()=>{
+            if(checkInpt(inputEdit.value)){
+                flag[0] = "1";
+                flag[1] = inputEdit.value;
+                alertEdit.style.display = "none";
+                resolve(flag);
+            }
+            else{
+                inputEditNote.style.display = "block";
+                setTimeout(()=>{
+                    inputEditNote.style.display = "none";
+        
+                }, 3000);
+            }
+                
+        })
+
+        cancelOpreationButtonEdit.addEventListener("click", ()=>{
+            alertEdit.style.display = "none";
+            resolve(flag);
+        })
+
+
         
     })
 
