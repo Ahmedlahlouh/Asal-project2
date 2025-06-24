@@ -400,6 +400,17 @@ body
     color: white;
 }
 
+#cancelOpreationButtonEdit
+{
+    background-color: #e94242;
+}
 
+#inputEditNote
+{
+    display: none;
+    color: red;
 
+    font-size: 1em;
+    text-align: center;
+}
     
