@@ -14,6 +14,16 @@ let alert = document.getElementById("confirmOpreation");
 let confirmOpreationButton = document.getElementById("confirmOpreationButton");
 let cancelOpreationButton = document.getElementById("cancelOpreationButton");
 
+//Add new task button and input
+let mainInput = document.getElementById("mainInput");
+let addNewTaskButton = document.getElementById("inputButton");
+let inputNote = document.getElementById("inputNote");
+
+
+
+
+   
+
 
 
    
