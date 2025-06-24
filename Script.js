@@ -313,6 +313,30 @@ const displayTasks = ()=>{
 
     
     
+    if(unloadedTasks.length > 0){
+        unloadedTasks.forEach(task =>{
+
+            let newTask = document.createElement("div");
+
+            newTask.classList  = "task";
+            newTask.id = task.taskId;
+
+            //Creating the paragraph to containt the text content
+            let tempParagraph = document.createElement("p");
+            tempParagraph.textContent = task.paragraphContent;
+            if(task.taskId[1] === 't')
+                tempParagraph.classList = "taskParagraphCrossed";
+           
+
+            //Creating Icondiv and content for the icon div
+            let iconDiv = document.createElement("div");
+            iconDiv.classList = "icons";
+
+
+
+        })
+    }
+  
 }
 
 
