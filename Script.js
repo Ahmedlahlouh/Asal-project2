@@ -209,6 +209,53 @@ const confirmOpreationEdit = ()=>{
 
 
 
+const confirmOpreation = ()=>{
+
+    let flag = false;
+    alert.style.display = "flex";
+
+/*
+    Here is the promise that forces the compiler to wait for input from a diffrent slower part
+    of the code.
+
+    NOTE:
+    You should declare the function that will deal with promises as ASYNC function
+*/ 
+
+    return new Promise((resolve, reject)=>{
+       
+        confirmOpreationButton.addEventListener("click", ()=>{
+           
+            alert.style.display = "none";
+            flag = true;
+            resolve(flag);
+        }),
+
+        cancelOpreationButton.addEventListener("click", ()=>{
+           
+            alert.style.display = "none";
+            resolve(flag =false);
+    
+        })
+        
+        /* 
+        setTimeout(()=>{
+            alert.style.display = "none";
+            reject(flag);
+    
+        }, 5000)
+        */
+        
+    });
+
+    
+
+
+
+    
+
+};
+
 
 
 
