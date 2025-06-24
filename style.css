@@ -313,7 +313,12 @@ body
     gap: 2em;
 }
 
-
+.alertContent div button
+{   
+    padding: 0.5em 2em;
+    border: none;
+    color: white;
+}
 
 
 
