@@ -367,6 +367,24 @@ const displayTasks = ()=>{
 }
 
 
+addNewTaskButton.onclick = ()=>
+{
+    let text = mainInput.value;
+    
+    if(checkInpt(text))
+    {
+        addNewTask(text);
+        inputNote.style.display = "";
+    }
+    else
+    {
+        inputNote.style.display = "block";
+        setTimeout(()=>{inputNote.style.display = ""}, 10000)
+    }
+        
+}
+
+
 
 
 
