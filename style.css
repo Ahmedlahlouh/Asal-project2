@@ -307,7 +307,11 @@ body
     text-align: center;
 }
 
-
+.alertContent div
+{
+    display: flex;
+    gap: 2em;
+}
 
 
 
