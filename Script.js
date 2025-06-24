@@ -360,7 +360,10 @@ const displayTasks = ()=>{
 
         })
     }
-  
+    console.log("This is inside display tasks and these are the tasks :")
+    console.log(unloadedTasks);
+    //To make sure the no task note isnt shown
+    
 }
 
 
