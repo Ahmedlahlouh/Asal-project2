@@ -112,6 +112,27 @@ const storeTaskChange = (task, index, flag)=>{
 
 
 
+const storeLocal = (task)=>{
+
+    let localTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    // Add the new task to the array
+    localTasks.push(task);
+
+    // Save the updated task array back to localStorage
+    localStorage.setItem("tasks", JSON.stringify(localTasks));
+
+   
+   
+    
+}
+
+
+
+
+
+
+
 
 
 
