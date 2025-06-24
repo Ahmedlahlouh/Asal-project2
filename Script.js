@@ -278,6 +278,20 @@ const displayTaskOnAddNew = (task)=>{
     tempParagraph.textContent = task.paragraphContent;
     
 
+    //Creating Icondiv and content for the icon div
+    let iconDiv = document.createElement("div");
+    iconDiv.classList = "icons";
+
+    let tempCheckbox = document.createElement("input");
+    tempCheckbox.type = "checkbox";
+
+    let tempImg1 = document.createElement("img");
+    tempImg1.src = "./sourceImages/icons/pencil-solid.svg"
+    tempImg1.alt = "pencilIcon";
+
+    let tempImg2 = document.createElement("img")
+    tempImg2.src = "./sourceImages/icons/trash-solid.svg";
+    tempImg2.alt = "deleteIcon";
 
 }
 
