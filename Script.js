@@ -307,6 +307,16 @@ const displayTaskOnAddNew = (task)=>{
     scrollContainerDiv.append(newTask);
 }
 
+const displayTasks = ()=>{
+    //creating the new div
+    const unloadedTasks = unloadTask();
+
+    
+    
+}
+
+
+
 
 
 
