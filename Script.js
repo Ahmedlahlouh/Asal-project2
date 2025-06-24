@@ -127,6 +127,18 @@ const storeLocal = (task)=>{
     
 }
 
+const saveTask = (text)=>{
+    mainInput.value = "";
+    let task = {
+        taskId : Math.floor((Math.random()*5)) + 'f',
+        paragraphStatus: "",
+        paragraphContent: text
+    };
+
+
+   
+};
+
 
 
 
