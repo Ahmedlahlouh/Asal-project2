@@ -394,7 +394,11 @@ body
 
 }
 
-
+.alertEditConfirmButton
+{
+    background-color: #0a96ba;
+    color: white;
+}
 
 
 
