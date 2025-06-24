@@ -42,6 +42,18 @@ let taskArr = document.getElementsByClassName("task");
 let deleteDoneButton = document.getElementById("deleteDone")
 let deleteAllButton = document.getElementById("deleteAll")
 
+const noTasksChecker = ()=>{
+    console.log("Inside noTasksChecker");
+    let taskCount = document.getElementsByClassName("task");
+    if(taskCount.length <= 0){
+        noTasksHeader.style.display = "block";
+    }
+    else{
+        noTasksHeader.style.display = "";
+    }
+
+}
+
 
 
 
