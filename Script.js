@@ -64,6 +64,34 @@ const removeTasksHTML = ()=>{
    
 }
 
+const removeTasksDoneHTML = ()=>{
+    let tasks = document.getElementsByClassName("task");
+    Array.from(tasks).forEach(task =>{
+        if(task.id[1] == 't')
+            task.remove();
+    })
+
+   
+}
+
+
+
+
+const storeTaskChange = (task, index, flag)=>{
+    let temp = unloadTask();
+    console.log("inside storeTaskChange");
+
+    /**
+     *  flag = 0 only content change to local storage
+     *  flag = 1 deleting entire object from the array
+     * 
+     * 
+     */
+
+}
+
+
+
 
 
 
