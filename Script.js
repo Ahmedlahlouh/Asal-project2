@@ -9,6 +9,12 @@ let cancelOpreationButtonEdit = document.getElementById("cancelOpreationButtonEd
 let inputEdit = document.getElementById("alertEditContentInput");
 let inputEditNote = document.getElementById("inputEditNote");
 
+// Alert buttons and div
+let alert = document.getElementById("confirmOpreation");
+let confirmOpreationButton = document.getElementById("confirmOpreationButton");
+let cancelOpreationButton = document.getElementById("cancelOpreationButton");
+
+
 
    
 
