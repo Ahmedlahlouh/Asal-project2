@@ -341,6 +341,14 @@ const displayTasks = ()=>{
             tempImg1.src = "./sourceImages/icons/pencil-solid.svg"
             tempImg1.alt = "pencilIcon";
 
+            let tempImg2 = document.createElement("img")
+            tempImg2.src = "./sourceImages/icons/trash-solid.svg";
+            tempImg2.alt = "deleteIcon";
+
+            //Appending content to the icondiv
+            iconDiv.append(tempCheckbox);
+            iconDiv.append(tempImg1)
+            iconDiv.append(tempImg2)
 
 
         })
