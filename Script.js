@@ -266,6 +266,21 @@ const addNewTask = (text)=>
 
 
 
+//               NOT FINISHED
+const displayTaskOnAddNew = (task)=>{
+    let newTask = document.createElement("div");
+
+    newTask.classList  = "task";
+    newTask.id = task.taskId;
+
+    //Creating the paragraph to containt the text content
+    let tempParagraph = document.createElement("p");
+    tempParagraph.textContent = task.paragraphContent;
+    
+
+
+}
+
 
 
 
